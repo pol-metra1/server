@@ -25,6 +25,8 @@ apt -y install php-json
 apt -y install php-opcache
 apt -y install php-readline
 apt -y install php-mcrypt
+apt -y install php-snmp
+apt -y install php-bcmath
 a2enconf php-fpm.conf
 service php-fpm reload
 systemctl restart apache2
