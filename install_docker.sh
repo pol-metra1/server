@@ -7,6 +7,7 @@ apt -y install gpg
 apt -y install software-properties-common
 apt -y install ca-certificates
 apt -y install apt-transport-https
+apt -y install maven
 wget -O- https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/docker.gpg > /dev/null
 VER=$(lsb_release -sc)
 echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $VER stable"| sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
