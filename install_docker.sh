@@ -37,3 +37,7 @@ curl -fsSL https://packages.buildkite.com/helm-linux/helm-debian/gpgkey | gpg --
 echo "deb [signed-by=/usr/share/keyrings/helm.gpg] https://packages.buildkite.com/helm-linux/helm-debian/any/ any main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
 apt update
 apt -y install helm
+curl -LJO "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/deb/gitlab-runner-helper-images.deb"
+dpkg -i gitlab-runner-helper-images.deb
+curl -LJO "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/deb/gitlab-runner_amd64.deb"
+dpkg -i gitlab-runner_amd64.deb
