@@ -41,3 +41,5 @@ curl -LJO "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/
 dpkg -i gitlab-runner-helper-images.deb
 curl -LJO "https://s3.dualstack.us-east-1.amazonaws.com/gitlab-runner-downloads/latest/deb/gitlab-runner_amd64.deb"
 dpkg -i gitlab-runner_amd64.deb
+rm -rf gitlab*
+rm -rf server
