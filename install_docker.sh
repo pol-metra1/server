@@ -3,6 +3,7 @@ apt update
 apt -y upgrade
 apt -y install wget
 apt -y install curl
+apt -y install gpg
 apt -y install software-properties-common
 apt -y install ca-certificates
 apt -y install apt-transport-https
@@ -16,9 +17,7 @@ cd /opt
 mkdir twportainer
 cd twportainer
 touch docker-compose.yml
-echo 'version: "3.3"
-
-services:
+echo 'services:
   twportainer:
     image: portainer/portainer-ce:latest
     container_name: twportainer
@@ -33,3 +32,7 @@ services:
     restart: always' >> docker-compose.yml
 docker compose up -d
 cd ~
+curl -fsSL https://packages.buildkite.com/helm-linux/helm-debian/gpgkey | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/helm.gpg] https://packages.buildkite.com/helm-linux/helm-debian/any/ any main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+apt update
+apt -y install helm
